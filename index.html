@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desk — Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desk">
+
+  <aside class="rail">
+    <div class="rail-head">
+      <h1 class="brand">Desk<span class="brand-dot">.</span></h1>
+      <p class="tagline">a pile of notes, kept in order</p>
+    </div>
+
+    <div class="search-row">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search notes…" autocomplete="off">
+      <button id="newNoteBtn" class="new-btn" title="New note">+ New</button>
+    </div>
+
+    <div class="count-row">
+      <span id="noteCount" class="mono">0 notes</span>
+      <span id="lastSaved" class="mono muted"></span>
+    </div>
+
+    <div id="cardStack" class="card-stack"></div>
+
+    <div id="emptyState" class="empty-state" hidden>
+      <p>The desk is bare.</p>
+      <p class="muted">Write your first note to fill it up.</p>
+    </div>
+  </aside>
+
+  <main class="sheet-wrap">
+    <div id="noSelection" class="no-selection">
+      <p class="no-selection-mark">✎</p>
+      <p>Pick a note from the stack, or start a new one.</p>
+    </div>
+
+    <section id="editor" class="sheet" hidden>
+      <header class="sheet-toolbar">
+        <input type="text" id="titleInput" class="title-input" placeholder="Untitled note" autocomplete="off">
+        <div class="toolbar-actions">
+          <span id="editedAt" class="mono muted"></span>
+          <button id="deleteBtn" class="delete-btn" title="Delete note">Delete</button>
+        </div>
+      </header>
+      <textarea id="bodyInput" class="body-input" placeholder="Start writing…"></textarea>
+    </section>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
